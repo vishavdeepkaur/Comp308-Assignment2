@@ -1,0 +1,24 @@
+{
+  "name": "expressportfolio",
+  "description": "My express portfolio COMP 308",
+  "main": "server.js",
+  "authors": [
+    "vishavdeep kaur"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/vishavdeepkaur/ExpressPortfolio",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/scripts/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.2.4",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0"
+  }
+}
