@@ -1,0 +1,37 @@
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.jumbotron {
+    background: url('https://code2prog.com/wp-content/uploads/2015/01/ceystalhorizon-flat-design-wallpapers-HD-free-wallpapers-backgrounds-images-FHD-4k-download-2014-2015-2016-1024x576.jpg');
+    background-size: cover;
+    background-position-y: 70%;
+    background-repeat: no-repeat;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+a {
+    color: #00B7FF;
+}
+
+
+/*Contact Me Page*/
+
+.contact-info .contact-sub-col {}
+
+.contact-info .contact-sub-col .sub-col-inner {
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 4px;
+    background-color: rgba(116, 116, 116, 0.08);
+}
+
+.sub-col-inner h2 {
+    margin-top: 0;
+}
