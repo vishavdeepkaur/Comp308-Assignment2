@@ -3,24 +3,20 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-<<<<<<< HEAD
     "start": "node server.js"
   },
   "engines": {
     "node": ">= 6.0.0",
     "npm": ">=3.9.0"
-=======
-    "start": "node ./bin/www"
->>>>>>> 869ea423099957ea5d0e2a879cfbfb9e1b4edb53
   },
   "dependencies": {
     "body-parser": "~1.16.0",
     "cookie-parser": "~1.4.3",
-<<<<<<< HEAD
+
     "debug": "~ 2.6.0",
-=======
+
     "debug": "~2.6.0",
->>>>>>> 869ea423099957ea5d0e2a879cfbfb9e1b4edb53
+
     "ejs": "~2.5.5",
     "express": "~4.14.1",
     "morgan": "~1.7.0",
@@ -29,7 +25,6 @@
   "description": "My express portfolio COMP 308",
   "main": "server.js",
   "author": "vishavdeep kaur",
-<<<<<<< HEAD
   "license": "ISC",
   "repository": {
     "type": "git",
@@ -40,7 +35,6 @@
   },
   "homepage": "https://github.com/vishavdeepkaur/ExpressPortfolio#readme",
   "devDependencies": {}
-=======
-  "license": "ISC"
->>>>>>> 869ea423099957ea5d0e2a879cfbfb9e1b4edb53
+
+
 }
