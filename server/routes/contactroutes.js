@@ -1,10 +1,10 @@
-/ modules required for routing
+// / modules required for routing
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 
 // define the book model
-let book = require('../models/books');
+let businessContact = require('../models/businessContacts').BusinessContact ;
 
 // create a function to check if the user is authenticated
 function requireAuth(req, res, next) {
@@ -19,14 +19,14 @@ function requireAuth(req, res, next) {
 /* GET books List page. READ */
 router.get('/', requireAuth, (req, res, next) => {
   // find all books in the books collection
-  book.find((err, books) => {
+  businessContact.find((err, businessContacts) => {
     if (err) {
       return console.error(err);
     }
     else {
-      res.render('books/index', {
-        title: 'Books',
-        books: books,
+      res.render('contactsList/index', {
+        title: 'Business Contacts',
+        businessContacts: businessContacts,
         displayName: req.user.displayName
       });
     }
@@ -41,9 +41,9 @@ router.get('/add', requireAuth, (req, res, next) => {
    * ADD CODE HERE *
    *****************/
 
-  res.render('books/details', {
-    title: "Add a new Book",
-    books: '',
+  res.render('contactsList/details', {
+    title: "Add a new Business Contact",
+    businessContacts: '',
     displayName: req.user.displayName
   });
 
@@ -56,21 +56,20 @@ router.post('/add', requireAuth, (req, res, next) => {
    * ADD CODE HERE *
    *****************/
 
-  let newBook = new book({
-    "Title": req.body.booktitle,
-    "Description": "",
-    "Price": req.body.price,
-    "Author": req.body.author,
-    "Genre": req.body.genre
+  let newBusinessContacts = new businessContact({
+    "Name": req.body.Name,
+    "Number": req.body.Number,
+    "Email": req.body.Email,
+   
   });
 
-  book.create(newBook, (err, book) => {
+  businessContact.create(newBusinessContacts, (err, businessContact) => {
     console.log(req, res)
     if (err) {
       console.log(err);
       res.end(err);
     } else {
-      res.redirect('/books');
+      res.redirect('/businessContacts');
     }
   });
 
@@ -79,9 +78,7 @@ router.post('/add', requireAuth, (req, res, next) => {
 // GET the Book Details page in order to edit an existing Book
 router.get('/:id', requireAuth, (req, res, next) => {
 
-  /*****************
-   * ADD CODE HERE *
-   *****************/
+
 
 
   try {
@@ -89,15 +86,15 @@ router.get('/:id', requireAuth, (req, res, next) => {
     let id = mongoose.Types.ObjectId.createFromHexString(req.params.id);
 
     // find one book by its id
-    book.findById(id, (err, books) => {
+    businessContact.findById(id, (err, businessContacts) => {
       if (err) {
         console.log(err);
         res.end(error);
       } else {
         // show the book details view
-        res.render('books/details', {
-          title: 'Book Details',
-          books: books,
+        res.render('contactsList/details', {
+          title: 'Contact Details',
+          businessContacts: businessContacts,
           displayName: req.user.displayName
         });
       }
@@ -119,22 +116,20 @@ router.post('/:id', requireAuth, (req, res, next) => {
   // get a reference to the id from the url
   let id = req.params.id;
 
-  let updatedBook = book({
+  let updateBusinessContact = businessContact({
     "_id": id,
-    "Title": req.body.booktitle,
-    "Description": "",
-    "Price": req.body.price,
-    "Author": req.body.author,
-    "Genre": req.body.genre
+     "Name": req.body.Name,
+    "Number": req.body.Number,
+    "Email": req.body.Email,
   });
 
-  book.update({ _id: id }, updatedBook, (err) => {
+  businessContact.update({ _id: id }, updateBusinessContact, (err) => {
     if (err) {
       console.log(err);
       res.end(err);
     } else {
       // refresh the books List
-      res.redirect('/books');
+      res.redirect('/businessContacts');
     }
   });
 
@@ -149,13 +144,13 @@ router.get('/delete/:id', requireAuth, (req, res, next) => {
   // get a reference to the id from the url
   let id = req.params.id;
 
-  book.remove({ _id: id }, (err) => {
+  businessContact.remove({ _id: id }, (err) => {
     if (err) {
       console.log(err);
       res.end(err);
     } else {
       // refresh the games list
-      res.redirect('/books');
+      res.redirect('/businessContacts');
     }
   });
 

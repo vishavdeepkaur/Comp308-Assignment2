@@ -34,7 +34,7 @@ db.once('open', () => {
   }
 });*/
 let index = require('./routes/index'); // top level routes
-//let books = require('./routes/books'); // routes for books
+let businessContacts = require('./routes/contactroutes'); // routes for books
 
 let app = express();
 
@@ -68,7 +68,7 @@ app.use(passport.session());
 
 
 app.use('/', index);
-//app.use('/books', books);
+app.use('/businessContacts', businessContacts);
 
 // Passport User Configuration
 let UserModel = require('./models/users');

@@ -1,4 +1,7 @@
 
+ <% include ../partials/head %>
+
+<body>
  <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -32,12 +35,12 @@
           </ul>
         </li>-->
           <% if(typeof displayName == 'string' && displayName) { %>
-          <% if(title == "books") { %>
-          <li class="active"><a href="/books"><i class="fa fa-book fa-lg">
-          </i> Books List</a></li>
+          <% if(title == "business contacts") { %>
+          <li class="active"><a href="/businessContacts"><i class="fa fa-book fa-lg">
+          </i> Business Contacts</a></li>
           <% } else { %>
-            <li><a href="/books"><i class="fa fa-book fa-lg">
-            </i> Books List</a></li>
+            <li><a href="/businessContacts"><i class="fa fa-book fa-lg">
+            </i> Business Contacts</a></li>
           <% } %>
         <% } %>
 
@@ -45,7 +48,7 @@
           <li class="navbar-text"><i class="fa fa-user"></i> Welcome, <%= displayName %></li>
           <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
         <% } else { %>
-          <li><a href="/login"><i class="fa fa-sign-in fa-2x"></i> Login</a></li>
+          <li><a href="/login"><i class="fa fa-sign-in fa-1x"></i> Login</a></li>
         <% } %>
       </ul>
     <!-- /.navbar-collapse -->
