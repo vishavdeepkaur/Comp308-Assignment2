@@ -5,7 +5,7 @@
  */
 
 
-var app = require('./app');
+var app = require('./server/app');
 
 
 
