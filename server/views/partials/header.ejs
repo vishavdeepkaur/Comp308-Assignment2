@@ -2,7 +2,11 @@
  <% include ../partials/head %>
 
 <body>
+   <% if(title == "Home") { %>
+    <nav class="navbar navbar-inverse navbar-transparent">
+   <% } else { %>   
  <nav class="navbar navbar-inverse navbar-custom">
+   <% } %>
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -17,12 +21,26 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <% if(title == "Home") { %>
         <li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
+        <% } else { %>
+          <li><a href="/">Home <span class="sr-only">(current)</span></a></li>
+         <% } %>
+         <% if(title == "About Me") { %>
+        <li class = "active"><a href="/about">About me</a></li>
+        <% } else { %>
         <li><a href="/about">About me</a></li>
+        <% } %>
+         <% if(title == "Projects") { %>
+        <li class="active"><a href="/projects">Projects</a></li>
+        <% } else { %>
         <li><a href="/projects">Projects</a></li>
+         <% } %> <% if(title == "Services") { %>
+        <li class= "active"><a href="/services">Services</a></li>
+         <% } else { %>
         <li><a href="/services">Services</a></li>
         
-        
+         <% } %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
        <li><a href="/contact">Contact me</a></li>
@@ -34,6 +52,9 @@
             <li><a href="#">Separated link</a></li>
           </ul>
         </li>-->
+
+         
+        
           <% if(typeof displayName == 'string' && displayName) { %>
           <% if(title == "business contacts") { %>
           <li class="active"><a href="/businessContacts"><i class="fa fa-book fa-lg">

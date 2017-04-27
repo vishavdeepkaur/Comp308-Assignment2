@@ -16,18 +16,28 @@ body {
    color:white;
      text-transform: uppercase;
     font-weight:500;
-    font-size: 15px;  
+    font-size: 20px;  
        text-align: center;
 }
-.navbar-inverse .navbar-nav>li>a
+
+.navbar-custom{
+    background-color: #333;
+}
+.navbar-custom .navbar-nav>li>a
 {
     margin-top:15px;
+    color:white;
+     text-transform: capitalize;
+    font-weight:500;
+}
+.navbar-transparent .navbar-nav>li>a
+{
+    margin-top:25px;
     color:white;
      text-transform: uppercase;
     font-weight:500;
 }
-
-.navbar-default  .navbar-brand 
+.navbar-inverse  .navbar-brand 
 {
  /*background-color: #fed136;*/
  /*background-color: #fed136;*/
@@ -36,15 +46,18 @@ body {
     color:#fed136;
    
     font-weight:100;
-    font-family:ssnell cursive;
+    font-family:snell cursive;
     font-style:italic;
 }
 .navbar-custom
 {
-    /*background-color: transparent;*/
+   text-transform: lowercase;
   border:none;
   color: white;
 }
+.navbar-transparent
+{ background-color: transparent;
+  border:none;}
 .outercontainer
 {
     background:url("http://wallpaperpulse.com/img/1166691.jpg") no-repeat center center fixed;
